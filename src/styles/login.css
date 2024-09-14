@@ -1,0 +1,75 @@
+.Container_HomePage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    height: 100%;
+
+
+}
+.login{
+    display: flex;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 250px;
+    gap: 8px;
+}
+.container_input{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+
+}
+.container_input input{
+    display: flex;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #E1BE9A;
+    border-radius: 15px;
+    padding-left: 15px;
+    background-color: #FEF9E0;
+    color: #E1BE9A;
+}
+.recover{
+    display: flex;
+    color:#E1BE9A; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn_btn{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    
+    justify-content: space-evenly;
+}
+
+.btn{
+    display: flex;
+  
+    width: 200px;
+    color: #fff;
+    justify-content: center;
+    border-radius: 10px;
+    height: 35px;
+    align-items: center;
+
+}
+.send{
+    background-color: #f2bf72;
+}
+.newcount{
+    background-color:#f9833a ;
+}
