@@ -1,0 +1,50 @@
+.Container_CreateUser{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+   
+   
+    
+}
+.texto{
+    display: flex;
+    font-size: 35px;
+    font-weight: 500;
+}
+.Contacto_Create{
+    flex-direction: column;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    gap: 10px;  
+    justify-content: space-evenly;
+    align-items: center;
+   
+}
+.Container_Input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+   
+    align-self: center;
+    width: 200px;  
+}
+
+.Container_texto{
+    display: flex;
+    height: 30px;
+    border-radius: 15px;    
+    border: 1px solid #E1BE9A;
+    padding-left: 15px;
+
+}
+.btn{
+    display: flex;
+    border: 1px solid ;
+    background-color: #f9833A;
+}

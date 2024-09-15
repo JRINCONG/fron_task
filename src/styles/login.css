@@ -4,9 +4,6 @@
     justify-content: center;
     align-items: center;
     align-items: center;
-    height: 100%;
-
-
 }
 .login{
     display: flex;
@@ -20,16 +17,19 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 250px;
     width: 250px;
-    gap: 8px;
+  
+    
 }
 .container_input{
     display: flex;
     flex-direction: column;
-    gap:10px;
-    justify-content: center;
+    gap:15px;
+    justify-content:center;
     align-items: center;
+
+    height: 50%;
 
 }
 .container_input input{

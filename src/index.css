@@ -32,15 +32,17 @@ img{
    
 }
 
-
-
 .container{
    
 max-width: 1024px;
 margin: 0 auto;
 padding: 0 20px;
 background-color: #F5F0ED;
+height: 100vh;
    
 
 
+}
+body{
+    background-color: #F5F0ED;
 }
