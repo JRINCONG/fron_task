@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useEfetch } from '../hook/useEfetch'
 import '../styles/CreateUser.css'
@@ -7,23 +7,27 @@ const CreateUsers = () => {
   
   const {handleSubmit, register, reset}=useForm()
   const [User,getUser]=useEfetch()
-  const [isValue, setIsvalue]=useState()
+  const [isValue, setIsvalue]=useState(false)
 
-    const Submit= (data)=>{
-      console.log(data)
+
+    useEffect(()=>{
+        if(User){
+          setTimeout(()=>{
+            setIsvalue(false)
+          },3000)
+        }
+    },[User])
+    const Submit=(data)=>{
       getUser(data)
-
       reset({
         firstName:"",
         lastName:"",
         phone:"",
-        emial:"",
+        email:"",
         password:""
       })
-
+        setIsvalue(true)
     }
-
-console.log(User)
   
   return (
     <div className='Container_CreateUser'>
@@ -41,14 +45,9 @@ console.log(User)
         <input {...register('password')}type='password' name='password' placeholder='New password' className='Container_texto'/>
         
        </div>
-
        <button className='btn'>Send</button>
-
-
-
-
       </form>
-      <div>{User && <p>Usuario Creado</p>}</div>
+      <div>{isValue && <p>Usuario Creado</p>}</div>
     </div>
   )
 }
