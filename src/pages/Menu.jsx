@@ -3,38 +3,48 @@ import { Link } from 'react-router-dom'
 import '../styles/Menu.css'
 import { useEfetch } from '../hook/useEfetch'
 
-const Menu = () => {
+const Menu = ({isRender}) => {
    
- const [,,UserMe,getUserMe]=useEfetch()
+  const [Loca, setLocal]=useState()
+ const [User,,UserMe,getUserMe]=useEfetch()
  
-const valor = localStorage.getItem('token')
+ const valor =localStorage.getItem('token')
 
-if(valor){
-  
-  console.log("hla")
- 
 
-}
 useEffect(()=>{
-  getUserMe()
-},[])
 
- 
+  if(valor){
+    getUserMe()
+  }
+
+},[isRender])
+
+
   
 
 
   return (
     <div className='Navbar'>
-      <ul className='container_items'>       
-        <li><Link to='/items'>Add Items</Link></li>
-        <li><Link to='/actividad'>Add Task</Link></li>
-        <li><Link to='/create'>Crear Cuenta</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+         
+        
+        
         {
-          (UserMe)&& <li><Link to='/login'>{UserMe.firstName}</Link></li>
+          (UserMe)? 
+          <ul className='Container_menu_user'>
+           
+            <li><Link to='/actividad'>Add Taks</Link></li>
+            <li><Link to='/items'>Add Items</Link></li>
+            <li><Link to='/'>{UserMe.usuario.firstName}</Link></li>
+            </ul>
+          :
+           <ul className='Container_menu_user'>
+             <li><Link to='/login'>Login</Link></li>
+             <li><Link to='/create'>Create</Link></li>
+           </ul>
+          
         }
        
-      </ul>      
+     
     </div>
   )
 }

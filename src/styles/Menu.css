@@ -23,3 +23,24 @@
 .container_items li:hover{
     border-bottom: 1px solid;
 }
+.Container_menu_user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    padding: 10px;
+
+}
+
+.Container_menu_user li :hover{
+    border-bottom: 1px solid rgb(243, 147, 4);
+    font-weight: 500;
+}
+
+.Container_menu_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    padding: 10px;
+}

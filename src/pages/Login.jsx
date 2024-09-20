@@ -12,11 +12,11 @@ import { useEfetch } from '../hook/useEfetch';
 
 
 
-export const Login = () => {
+export const Login = ({setisRender}) => {
 const { handleSubmit,reset, register }=useForm()
 const navigate= useNavigate()
-const [User,getUser]=useEfetch()
-const [Register, setRegister,,getUserMe]=useState()
+const [User,getUser,,getUserMe]=useEfetch()
+const [Register, setRegister]=useState()
 
 
 
@@ -29,6 +29,8 @@ const NewUser = ()=>{
 useEffect(()=>{
   if(Register){
     navigate('/')
+    setisRender(true)
+ 
   }
 },[Register])
 
@@ -41,7 +43,7 @@ const Submit = async(data)=>{
   })
  
  await setRegister(localStorage.getItem('token'))
- getUserMe()
+
 }
 
  
@@ -49,6 +51,7 @@ const Submit = async(data)=>{
   return (
     <div className='Container_HomePage'>
       <h1 className='login'>Login</h1>
+
       <form className='contact' onSubmit={handleSubmit(Submit)}>
         <div className='container_input'>        
        <input {...register ('email')}type='text' name='email' placeholder='email' required/>        

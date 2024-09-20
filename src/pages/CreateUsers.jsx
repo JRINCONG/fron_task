@@ -6,19 +6,20 @@ import '../styles/CreateUser.css'
 const CreateUsers = () => {
   
   const {handleSubmit, register, reset}=useForm()
-  const [User,getUser]=useEfetch()
+  const [User,getUse,,,CreateUser, getCreateUser]=useEfetch()
   const [isValue, setIsvalue]=useState(false)
 
 
     useEffect(()=>{
-        if(User){
+        if(CreateUser){
           setTimeout(()=>{
             setIsvalue(false)
-          },3000)
+          },2000)
         }
-    },[User])
+    },[CreateUser])
+
     const Submit=(data)=>{
-      getUser(data)
+      getCreateUser(data)
       reset({
         firstName:"",
         lastName:"",
@@ -38,7 +39,7 @@ const CreateUsers = () => {
       <form  onSubmit={handleSubmit(Submit)} className='Contacto_Create'>
 
        <div className='Container_Input'>
-        <input {...register('firstName')}type='text' name='firstName' placeholder='FirstName' className='Container_texto'/>
+        <input {...register('firstName')}type='text' name='firstName' placeholder='FirstName' className='Container_texto' autoFocus/>
         <input {...register('lastName')}type='text' name='lastName' placeholder='LastName' className='Container_texto'/>
         <input {...register('phone')}type='phone' name='phone' placeholder='Phone' className='Container_texto'/>
         <input {...register('email')}type='email' name='email' placeholder='Email' className='Container_texto'/>
@@ -47,7 +48,7 @@ const CreateUsers = () => {
        </div>
        <button className='btn'>Send</button>
       </form>
-      <div>{isValue && <p>Usuario Creado</p>}</div>
+      <div>{isValue && <p>Successfully Registered User👌</p>}</div>
     </div>
   )
 }

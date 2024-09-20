@@ -1,0 +1,51 @@
+.Container_Additems{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 90%;
+    background-color: #FFFDf3;
+}
+.Additems_form{
+    display: flex;
+    gap: 15px;
+}
+.texto1{
+    display: flex;
+    color: #23221d;
+    border: 1px solid #EBD1B1;
+    border-radius: 15px;
+    width: 250px;
+    padding-left: 15px;
+
+}
+.Container_CardItems{
+    display: flex;
+    flex-direction: column;
+
+}
+.box_items{
+    display: flex;
+    border:1px solid #23221d;
+    padding: 2px;
+    gap: 10px;
+    justify-content: space-between;
+
+}
+
+.Modal{
+    display: none;
+}
+.Show{
+      display: flex;
+      position: absolute;
+      width: 300px;
+      background-color: #23221d;
+      color: #FFFDf3;
+      padding: 16px 32px 24px;
+      top: 90%;
+      right: 1%;
+      transform: translate(-10%,-10%);
+}
