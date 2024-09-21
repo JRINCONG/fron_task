@@ -38,6 +38,8 @@
 .Modal{
     display: none;
 }
+
+
 .Show{
       display: flex;
       position: absolute;
@@ -48,4 +50,44 @@
       top: 90%;
       right: 1%;
       transform: translate(-10%,-10%);
+}
+
+.vista{
+      display: flex;
+      position: absolute;
+      width: 300px;
+      background-color: #2c2c2c;
+      color: #FFFDf3;
+      padding: 16px 32px 24px;
+      top: 60%;
+      left: 40%;
+      transform: translate(-10%,-10%);
+      gap:10px;
+     
+}
+.vista input{
+    border-radius: 10px;
+    padding-left: 10px;
+    color: black;
+}
+
+.btn_vista{
+    border: 1px solid white;
+    width: 50px;   
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background-color:  #FFFDf3;
+}
+.cerrar{
+    position: absolute;
+    top: 0;
+    right: 3px;
+    border: 1px solid white;
+    text-align: center;    
+    font-size: 10px;
+    width: 15px;
+    margin-top: 3px;
+    
 }

@@ -5,25 +5,29 @@ import { useDispatch, useSelector } from 'react-redux'
 export const CardItems = ({item}) => {
 const dispatch= useDispatch()
 const [IsValue, setIsValue]=useState(false)
+const [EditModal, setEditModal]=useState(false)
 const items= useSelector((store)=> store.ItemsSlice)
 const EditItems = ()=>{
-  console.log(item.id)
+ setEditModal(true)
 }
 
 useEffect(()=>{
   if(IsValue){
     
-    setTimeout(()=>{
+   setTimeout(()=>{
       setIsValue()
     },8000)
     
   }
 },[items])
 
-const RemoveItems= () =>{
-  dispatch(getDestroyThunk(item.id))
+const RemoveItems= async() =>{
+  await dispatch(getDestroyThunk(item.id))
    setIsValue(true)
 
+}
+const EditaritemsUser=()=>{
+  
 }
 
   
@@ -35,10 +39,14 @@ const RemoveItems= () =>{
           <button className='btn_delete' onClick={RemoveItems}><box-icon name='trash'></box-icon></button>
           <button className='btn_delete' onClick={EditItems}><box-icon name='edit'></box-icon></button>
 
-        </div>
-       
+        </div>       
         <div className={`Modal ${IsValue && 'Show'}`}>
           <h1>Items removed successfully👌</h1>
+        </div>
+        <div className={`Modal ${EditModal && 'vista'}`}>
+          <span className='cerrar'onClick={()=>{setEditModal(false)}}>x</span>
+          <input type='text' placeholder='Edit Items'/>
+          <button className='btn_vista' onClick={EditaritemsUser}><box-icon name='edit'></box-icon></button>
 
         </div>
 
