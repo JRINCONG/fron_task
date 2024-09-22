@@ -8,6 +8,7 @@
     height: 90%;
     background-color: #FFFDf3;
 }
+
 .Additems_form{
     display: flex;
     gap: 15px;
@@ -23,12 +24,13 @@
 }
 .Container_CardItems{
     display: flex;
+    gap: 10px;
     flex-direction: column;
 
 }
 .box_items{
     display: flex;
-    border:1px solid #23221d;
+    border:1px solid #d6b71b;
     padding: 2px;
     gap: 10px;
     justify-content: space-between;
@@ -73,12 +75,13 @@
 
 .btn_vista{
     border: 1px solid white;
-    width: 50px;   
-    border-radius: 10px;
+    width: 30px;
+    height: 26px;
     align-items: center;
     justify-content: center;
     align-content: center;
     background-color:  #FFFDf3;
+    border-radius: 5px;
 }
 .cerrar{
     position: absolute;
@@ -90,4 +93,15 @@
     width: 15px;
     margin-top: 3px;
     
+}
+.btn_vista:hover{
+  cursor: pointer;  
+  background-color: #f08234;
+}
+
+.cerrar:hover{
+    border: 1px solid #f08234 ;
+    background-color: #FFFDf3;
+    cursor: pointer;
+    color: #23221d;
 }
