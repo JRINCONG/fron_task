@@ -20,10 +20,10 @@ useEffect(()=>{
     
    setTimeout(()=>{
       setIsValue()
-    },8000)
+    },5000)
     
   }
-},[items])
+},[])
 
 const RemoveItems= async() =>{
   await dispatch(getDestroyThunk(item.id))
@@ -40,8 +40,9 @@ const EditaritemsUser=(data)=>{
     
   return (
     <>
-      <div className='box_items'id={item.id}>
-          <h2 >{item.description}</h2>
+    
+      <div className='box_items'id={item.id}>      
+          <h2 >{item.description}</h2>          
           <div className='bts'>
           <button className='btn_delete' onClick={RemoveItems}><box-icon name='trash'></box-icon></button>
           <button className='btn_delete' onClick={EditItems}><box-icon name='edit'></box-icon></button>
