@@ -2,14 +2,14 @@ import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getItemsThunk } from '../store/slice/Items.slice'
 
-export const SelectAddtask = ({setSelectItemsId}) => {
+export const SelectAddtask = ({ SelectItemsId, setSelectItemsId}) => {
 const selectItems =useRef()
 const items = useSelector((store) => store.ItemsSlice)
 const dispatch = useDispatch()
 
 useEffect(()=>{
     dispatch(getItemsThunk())
-},[])
+},[SelectItemsId])
 
 const selection = ()=>{
    

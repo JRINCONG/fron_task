@@ -1,16 +1,39 @@
+.Cointainer_act{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
 .Container_Activity{
     display: flex;
-    width: 100%;
+    width: 70%;
     height: 80%;
     border: 1px solid red;
     flex-direction: column;
+    justify-content: center;
+   box-sizing: border-box;
+   
 }
 .Calendar_star{
     display: flex;
     flex-direction: column;
-    border: 1px solid greenyellow;
-    align-items: end;
+    border: 1px solid rgb(235, 237, 96);
+    margin-top: 15px;
+    width: 200px;
+    align-self: self-end;
+    padding: 30px;
+    align-items: center;
+    gap:10px;
+    object-fit: contain;
     
+}
+.Calendar_end{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid rgb(235, 237, 96);
+    padding: 20px;
+    align-items: center;
+    gap:10px;
 }
 h1{
     display: flex;

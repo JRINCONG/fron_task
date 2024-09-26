@@ -44,3 +44,12 @@
     gap:15px;
     padding: 10px;
 }
+.Active{
+    border-bottom:1px solid rgb(243, 147, 4);
+    font-weight: 500;
+    color: black;
+    
+}
+.nav_select{
+    color: rgb(50, 50, 50);
+}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import "react-datepicker/dist/react-datepicker.css";
-import 'rsuite/DatePicker/styles/index.css';
 import { getDate } from '../util/GetDate';
 import { useForm } from 'react-hook-form';
 import { SelectAddtask } from '../components/SelectAddtask';
@@ -8,6 +7,8 @@ import { PostActivityThunk } from '../store/slice/Activity.slice';
 import { DateStar_Addtask } from '../components/DateStar_Addtask';
 import { DateEnd_Addtask } from '../components/DateEnd_Addtask';
 import '../styles/Addtaks.css'
+import dayjs from 'dayjs';
+import { useDispatch } from 'react-redux';
 
 export const Addtaks = () => {
 
@@ -15,14 +16,29 @@ export const Addtaks = () => {
   const [DateEnd,setDateEnd]=useState()
   const [DateStar, setDateStar]=useState()
   const [SelectItemsId,setSelectItemsId]=useState()
+  const dispatch=useDispatch()
+ 
 
-
-
+console.log(SelectItemsId)
   
-  const SubmitActivyti= (data) =>{
-    console.log(data)
-    console.log(DateStar)
-    window.location.reload(true);
+  const SubmitActivyti= async(data) =>{
+    await dispatch(PostActivityThunk({
+      title:data.nameactivity,
+      dateInicial:DateStar,
+      dateFinal:DateEnd,
+      note:data.note,
+      itemId:SelectItemsId
+    }))
+
+ reset({
+  nameactivity:"",
+  note:""
+ })
+       
+    setDateStar()
+    setDateEnd()
+    
+  
 
     //falta programar el envio del formulario
     //setDateStar()
@@ -34,6 +50,7 @@ export const Addtaks = () => {
 
 
   return (
+    <div className='Cointainer_act'>
     <div className='Container_Activity'>
       
       <h1>Record your Activities</h1>
@@ -49,12 +66,14 @@ export const Addtaks = () => {
        <h4>End Date Activity</h4>
        <DateEnd_Addtask
        setDateEnd={setDateEnd}
+       DateEnd={DateEnd}
        />
       </div>
-
+     
       <div className='Input_items'>
         <SelectAddtask
         setSelectItemsId={setSelectItemsId}
+        SelectItemsId={SelectItemsId}
         />
       </div>
       <form onSubmit={handleSubmit(SubmitActivyti)} className='Form_activity'>
@@ -70,6 +89,7 @@ export const Addtaks = () => {
 
      
     
+    </div>
     </div>
   )
 }

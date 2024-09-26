@@ -1,13 +1,11 @@
 import React from 'react'
-import DatePicker from 'rsuite/DatePicker'
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import 'rsuite/DatePicker/styles/index.css';
-
-export const DateEnd_Addtask = ({setDateEnd}) => {
+export const DateEnd_Addtask = ({ DateEnd, setDateEnd }) => {
   
   return (
     <div>
-       <DatePicker placeholder="End Date Activity"  onChange={(date)=>{setDateEnd(date)}}/>
+       <DatePicker selected={DateEnd}  onChange={(date)=>{setDateEnd(date)}}/>
     </div>
   )
 }

@@ -17,6 +17,9 @@ body{
     
     margin: 0px;
     padding: 0px; 
+    box-sizing: border-box;
+    background-color: #F5F0ED;
+    box-sizing: content-box;
    
     
    
@@ -39,10 +42,11 @@ margin: 0 auto;
 padding: 0 20px;
 background-color: #F5F0ED;
 height: 100vh;
+box-sizing: border-box;
    
 
 
 }
 body{
-    background-color: #F5F0ED;
+   
 }

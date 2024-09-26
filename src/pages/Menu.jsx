@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import '../styles/Menu.css'
 import { useEfetch } from '../hook/useEfetch'
 
@@ -26,25 +26,31 @@ useEffect(()=>{
   return (
     <div className='Navbar'>
          
-        
+   
         
         {
-          (UserMe)? 
+          (UserMe)?
+        
           <ul className='Container_menu_user'>
-           
-            <li><Link to='/actividad'>Add Taks</Link></li>
-            <li><Link to='/items'>Add Items</Link></li>
-            <li><Link to='/'>{UserMe.usuario.firstName}</Link></li>
+        
+            <li><NavLink  className={ (val)=> `nav_select ${ val.isActive ? 'Active':'' }`} to='/actividad'>Add Taks</NavLink></li>
+            
+            <li>
+              <NavLink className={ (val)=>`nav_select ${ val.isActive ? 'Active':''}`} to='/items'>Add Items</NavLink>
+              </li>
+            <li>{UserMe.usuario.firstName}</li>
+            
             </ul>
           :
            <ul className='Container_menu_user'>
              <li><Link to='/login'>Login</Link></li>
              <li><Link to='/create'>Create</Link></li>
+            
            </ul>
-          
+           
         }
        
-     
+   
     </div>
   )
 }
