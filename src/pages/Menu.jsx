@@ -39,6 +39,7 @@ useEffect(()=>{
               <NavLink className={ (val)=>`nav_select ${ val.isActive ? 'Active':''}`} to='/items'>Add Items</NavLink>
               </li>
             <li>{UserMe.usuario.firstName}</li>
+            <li><span className='btn_logout'>Logout</span></li>
             
             </ul>
           :
