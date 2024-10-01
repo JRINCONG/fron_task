@@ -6,7 +6,7 @@ const Activity = createSlice({
     name:"Activity",
     initialState:[],
     reducers:{
-        setActivity:(_state,action)=>{action.payload},
+        setActivity:(state,action) => state = action.payload,
         setAddActivity:(state ,{payload})=>[...state , payload]
     }
 
@@ -23,4 +23,12 @@ export const PostActivityThunk= (data)=>(dispatch)=>{
     axios.post(`${ruta}/actividades`,data, BearerToken())
     .then(resp => dispatch(setAddActivity(resp.data)))
     .catch(error=> console.log(error))
+}
+
+
+export const getAllActivityThunk = ()=>(dispatch)=>{
+
+  axios.get(`${ruta}/actividades`,BearerToken())
+  .then(resp => dispatch(setActivity(resp.data)))
+  .catch(error => console.log(error))
 }

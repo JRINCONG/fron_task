@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "react-datepicker/dist/react-datepicker.css";
 import { getDate } from '../util/GetDate';
 import { useForm } from 'react-hook-form';
 import { SelectAddtask } from '../components/SelectAddtask';
 import { PostActivityThunk } from '../store/slice/Activity.slice';
 import { DateStar_Addtask } from '../components/DateStar_Addtask';
-import { DateEnd_Addtask } from '../components/DateEnd_Addtask';
 import '../styles/Addtaks.css'
 import dayjs from 'dayjs';
 import { useDispatch } from 'react-redux';
@@ -13,15 +12,21 @@ import { useDispatch } from 'react-redux';
 export const Addtaks = () => {
 
   const {handleSubmit,register,reset}=useForm()
-  const [DateEnd,setDateEnd]=useState()
-  const [DateStar, setDateStar]=useState()
+  const [DateEnd,setDateEnd]=useState(null)
+  const [DateStar, setDateStar]=useState(new Date())
   const [SelectItemsId,setSelectItemsId]=useState()
+  const [ShowModal, setShowModal]= useState(false)
+  const [ResetCalendar, setResetCalendar]=useState(false)
   const dispatch=useDispatch()
  
 
-console.log(SelectItemsId)
+
+
+ 
   
   const SubmitActivyti= async(data) =>{
+   
+    if(data.nameactivity !="" && data.note !=""){
     await dispatch(PostActivityThunk({
       title:data.nameactivity,
       dateInicial:DateStar,
@@ -33,64 +38,62 @@ console.log(SelectItemsId)
  reset({
   nameactivity:"",
   note:""
- })
-       
-    setDateStar()
-    setDateEnd()
-    
+ })    //falta programar el envio del formulario
   
-
-    //falta programar el envio del formulario
-    //setDateStar()
-   // PostActivityThunk()
+  setResetCalendar(true)
+  }
+  if(!ShowModal){
+    
+    setShowModal(true) // PostActivityThunk()
+  }
+  
   }
  
 
 
 
-
   return (
     <div className='Cointainer_act'>
+       <h1>Record your Activities</h1>
     <div className='Container_Activity'>
       
-      <h1>Record your Activities</h1>
+     
       
       <div className='Calendar_star'>
-      <h4>Start Date Activity</h4>
+        <h3>Select your Date Range</h3>      
       <DateStar_Addtask      
-      setDateStar={setDateStar}
-      DateStar={DateStar}
+      setDateStars={setDateStar}
+      setDateEnds={setDateEnd}
+      ResetCalendar={ ResetCalendar }
       />
-      </div>
-      <div className='Calendar_end'>
-       <h4>End Date Activity</h4>
-       <DateEnd_Addtask
-       setDateEnd={setDateEnd}
-       DateEnd={DateEnd}
-       />
+    
+      
       </div>
      
       <div className='Input_items'>
+        <div className='select'>
         <SelectAddtask
         setSelectItemsId={setSelectItemsId}
         SelectItemsId={SelectItemsId}
         />
       </div>
+      <hr className="Linea"/>
       <form onSubmit={handleSubmit(SubmitActivyti)} className='Form_activity'>
        <input {...register('nameactivity')}placeholder='Name Activity' type='text' name='nameactivity'/>
        <textarea {...register('note')}placeholder='Description About Activity' name='note' />
-       <button className='btn btn'>Send Task</button>
+       <button className='btn btn-btn'>Send Task</button>
 
-      </form>
-     
-     
-     
-      
+      </form> 
 
-     
+      <div className={`Modal_Actividad ${ShowModal && 'show'}`}>
+        <h1>😟 You must record all data 😥</h1>
+          <span className='cerrar'onClick={()=>{setResetCalendar(false),setShowModal(false)}}>X</span>
+       </div>   
+      </div>
     
-    </div>
-    </div>
+      </div>
+  </div>
+   
   )
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getItemsThunk } from '../store/slice/Items.slice'
-
+import '../styles/Addtaks.css'
 export const SelectAddtask = ({ SelectItemsId, setSelectItemsId}) => {
 const selectItems =useRef()
 const items = useSelector((store) => store.ItemsSlice)

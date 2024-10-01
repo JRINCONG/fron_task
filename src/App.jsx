@@ -10,12 +10,15 @@ import './index.css';
 import {Addtaks} from './pages/Addtaks'
 import { Validar } from './components/Validar'
 import{ AddItems }from './pages/AddItems'
+import { ShowActivity } from './pages/ShowActivity'
+import { Error } from './pages/Error'
 
 const App = () => {
   const [isRender, setisRender]= useState()
   return (
     <div className="container">
-       <Menu  isRender={isRender}/>
+       <Menu 
+       isRender={isRender}/>
        <Routes>
        <Route path='/' element={<HomePage/>}/>
        <Route path='/login' element={<Login setisRender={setisRender}/>}/>
@@ -24,10 +27,10 @@ const App = () => {
        <Route element={<Validar/>}>
        <Route path='/items' element={<AddItems/>}/>
        <Route path='/actividad' element={<Addtaks/>}/>
-       
+       <Route path='/show_activity' element={<ShowActivity/>}/>       
        </Route>
 
-       <Route path='*' element={<Error/>}/>
+       <Route path='/*' element={<Error/>}/>
 
        </Routes>
     </div>

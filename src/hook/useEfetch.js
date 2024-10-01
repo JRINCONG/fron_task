@@ -25,7 +25,7 @@ const [CreateUser, setCreateUser]=useState()
     const getUserMe= async()=>{
        await axios.get(`${ruta}/users/me`,BearerToken())
         .then(resp => setUserMe(resp.data))
-        .catch(error => console.log(error))
+        .catch(error => error)
     }
 
     return [User,getUser,UserMe,getUserMe,CreateUser, getCreateUser]
