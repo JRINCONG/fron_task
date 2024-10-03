@@ -15,7 +15,7 @@ export const ShowActivity = () => {
  
   console.log(actividad)
   return (
-    <div>
+    <div className="Container_Card">
       {
         actividad.map((item)=>(
 

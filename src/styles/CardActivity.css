@@ -1,0 +1,20 @@
+
+.Container_Card{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+.Container_activity{
+    display: flex;
+    flex-direction: row;
+    
+    max-width: 190px;
+    gap: 10px;
+}
+.Card_activity{
+    display: flex;
+    flex-direction: column;
+}
