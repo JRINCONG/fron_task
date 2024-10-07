@@ -33,10 +33,11 @@ useEffect(()=>{
         
           <ul className='Container_menu_user'>
              <li>
-              <NavLink className={ (val)=>`nav_select ${ val.isActive ? 'Active':''}`} to='/show_activity'>Show Activity</NavLink>
+              <NavLink className={ (val)=>`nav_select ${ val.isActive ? 'Active':''}`} to='/actividades'>Activity</NavLink>
               </li>
         
-            <li><NavLink  className={ (val)=> `nav_select ${ val.isActive ? 'Active':'' }`} to='/actividad'>Add Taks</NavLink></li>
+            <li><NavLink  className={ (val)=> `nav_select ${ val.isActive ? 'Active':'' }`} to='/Add_Actividad'>Add 
+            activities</NavLink></li>
             
             <li>
               <NavLink className={ (val)=>`nav_select ${ val.isActive ? 'Active':''}`} to='/items'>Add Items</NavLink>

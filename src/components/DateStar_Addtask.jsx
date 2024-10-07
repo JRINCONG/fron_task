@@ -27,7 +27,7 @@ const OnChange = (dates)=>{
  setDateEnds(end)
 
 }
-console.log(ResetCalendar)
+
 useEffect(()=>{
 
   if(ResetCalendar){

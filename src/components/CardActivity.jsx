@@ -1,13 +1,15 @@
 import { Rowing } from "@mui/icons-material"
 import { Button, Card, CardActions, CardContent, Typography } from "@mui/material"
 import '../styles/CardActivity.css'
+import {Items} from '../components/Items'
 
 
 export const CardActivity = ({item}) => {
 
+
    const DateFormat= (date)=>{
-    console.log(date)
-   console.log(new Date(date))
+
+
       
    }
   return (
@@ -18,8 +20,16 @@ export const CardActivity = ({item}) => {
          <h2>{item.title}</h2> 
         </Typography>
         <hr/>
+        <span className="Add_items">Items</span>
         <Typography variant="h5" component="div">
-          {item.item?.description}
+          {
+            item.item_activities.map((iten, index)=>(
+              <Items
+              key={index}
+              iten={iten}
+              />
+            ))
+          }
         </Typography>
         <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>Notation:</Typography>
         <Typography variant="body2">

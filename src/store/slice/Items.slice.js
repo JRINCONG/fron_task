@@ -9,12 +9,13 @@ const Items= createSlice({
         setShowItems:(state,action)=>state = action.payload,
         setAddItems:(state,{payload})=>[...state, payload],
         setDestroyItems:(state,{payload})=>[...state].filter((item)=> item.id !== payload),
+        setONeItems:(state,{payload})=>[...state, payload],
         setEditItems:(state,{payload})=>[...state].forEach((item)=>(item.id === payload.id ? item.description = payload.description: item))
         
     }
 })
 
-export const {setShowItems, setAddItems, setDestroyItems,setEditItems}=Items.actions
+export const {setShowItems, setAddItems, setDestroyItems,setEditItems, setONeItems}=Items.actions
 export default Items.reducer
 
 const ruta= import.meta.env.VITE_API_URL;
@@ -25,6 +26,8 @@ export const getItemsThunk = () => (dispatch) =>{
     .catch(error=>console.log(error))
 
 }
+
+
 
 export const gettAdditemsThunk = (data) =>(dispatch)=>{
 
@@ -44,6 +47,11 @@ export const getEditThunk =(id,data)=>(dispatch)=>{
        axios.put(`${ruta}/items/${id}`,data, BearerToken())
        .then(resp => dispatch(setEditItems(resp.data)))
        .catch(error => console.log(error))
+}
+export const getONeThunk = (id)=>(dispatch)=>{
+      axios.get(`${ruta}/items/${id}`, BearerToken())
+      .then(resp => dispatch(setONeItems(resp.data)))
+      .catch(error => console.log(error))
 }
 
 

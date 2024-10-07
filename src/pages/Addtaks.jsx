@@ -32,7 +32,6 @@ export const Addtaks = () => {
       dateInicial:DateStar,
       dateFinal:DateEnd,
       note:data.note,
-      itemId:SelectItemsId
     }))
 
  reset({
@@ -72,10 +71,7 @@ export const Addtaks = () => {
      
       <div className='Input_items'>
         <div className='select'>
-        <SelectAddtask
-        setSelectItemsId={setSelectItemsId}
-        SelectItemsId={SelectItemsId}
-        />
+        
       </div>
       <hr className="Linea"/>
       <form onSubmit={handleSubmit(SubmitActivyti)} className='Form_activity'>

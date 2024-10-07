@@ -8,12 +8,12 @@ export const ShowActivity = () => {
 
   const actividad= useSelector((store)=> store.ActivitySlice)
   const dispatch=useDispatch()
- 
+  
   useEffect(()=>{
     dispatch(getAllActivityThunk())
   },[])
  
-  console.log(actividad)
+
   return (
     <div className="Container_Card">
       {
