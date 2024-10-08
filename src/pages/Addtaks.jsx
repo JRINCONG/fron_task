@@ -13,15 +13,15 @@ export const Addtaks = () => {
 
   const {handleSubmit,register,reset}=useForm()
   const [DateEnd,setDateEnd]=useState(null)
-  const [DateStar, setDateStar]=useState(new Date())
+  const [DateStar, setDateStar]=useState()
   const [SelectItemsId,setSelectItemsId]=useState()
   const [ShowModal, setShowModal]= useState(false)
   const [ResetCalendar, setResetCalendar]=useState(false)
   const dispatch=useDispatch()
  
 
-
-
+console.log('fecha Inicial',DateStar)
+console.log('Fecha final',DateEnd)
  
   
   const SubmitActivyti= async(data) =>{
@@ -33,7 +33,7 @@ export const Addtaks = () => {
       dateFinal:DateEnd,
       note:data.note,
     }))
-
+ console.log("Esta paso despues de guardar",DateStar)
  reset({
   nameactivity:"",
   note:""
@@ -64,6 +64,7 @@ export const Addtaks = () => {
       setDateStars={setDateStar}
       setDateEnds={setDateEnd}
       ResetCalendar={ ResetCalendar }
+     
       />
     
       

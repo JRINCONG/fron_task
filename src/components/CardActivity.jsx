@@ -2,10 +2,16 @@ import { Rowing } from "@mui/icons-material"
 import { Button, Card, CardActions, CardContent, Typography } from "@mui/material"
 import '../styles/CardActivity.css'
 import {Items} from '../components/Items'
+import{ v4 }from 'uuid'
 
 
 export const CardActivity = ({item}) => {
 
+console.log(item)
+
+ const onClikCard = (e)=>{
+  console.log(item.id)
+ }
 
    const DateFormat= (date)=>{
 
@@ -13,19 +19,19 @@ export const CardActivity = ({item}) => {
       
    }
   return (
-    <div className="Container_activity">
+    <div className="Container_activity" id={item.id} onClick={onClikCard}>
      <Card className="Card_activity" sx={{ maxWidth: 200 }}>
       <CardContent>
         <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-         <h2>{item.title}</h2> 
+         <span>{item.title}</span> 
         </Typography>
         <hr/>
         <span className="Add_items">Items</span>
         <Typography variant="h5" component="div">
           {
-            item.item_activities.map((iten, index)=>(
+            item.item_activities?.map((iten)=>(
               <Items
-              key={index}
+              key={v4()}
               iten={iten}
               />
             ))
@@ -37,8 +43,8 @@ export const CardActivity = ({item}) => {
           <br />
         
           <br/>
-          <span><b>Date Start</b> {DateFormat(item.dateInicial)}</span><br/>
-          <span><b>Date End</b> {item.dateFinal}</span>
+          <span><b>Date Start: </b> {item.dateInicial}</span><br/>
+          <span><b>Date End: </b> {item.dateFinal}</span>
           
         </Typography>
       </CardContent>

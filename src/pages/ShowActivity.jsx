@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getAllActivityThunk } from "../store/slice/Activity.slice"
 import { CardActivity } from "../components/CardActivity"
-
+import{ v4 }from 'uuid'
 
 export const ShowActivity = () => {
 
@@ -17,10 +17,10 @@ export const ShowActivity = () => {
   return (
     <div className="Container_Card">
       {
-        actividad.map((item)=>(
+        actividad?.map((item)=>(
 
           <CardActivity
-          key={item.id}
+          key={v4()}
           item = {item}
           
           />

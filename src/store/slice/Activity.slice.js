@@ -28,7 +28,7 @@ export const PostActivityThunk= (data)=>(dispatch)=>{
 
 export const getAllActivityThunk = ()=>(dispatch)=>{
 
-  axios.get(`${ruta}/actividades`,BearerToken())
+    axios.get(`${ruta}/actividades`,BearerToken())
   .then(resp => dispatch(setActivity(resp.data)))
   .catch(error => console.log(error))
 }

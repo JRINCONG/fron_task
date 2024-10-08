@@ -22,10 +22,9 @@ const [DateEnd, setDateEnd]=useState(null)
 const OnChange = (dates)=>{
   const [star, end]=dates;
  setDateStar(star)
- setDateEnd(end)
  setDateStars(star)
+ setDateEnd(end)
  setDateEnds(end)
-
 }
 
 useEffect(()=>{
