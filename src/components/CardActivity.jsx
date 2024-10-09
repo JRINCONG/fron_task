@@ -3,6 +3,7 @@ import { Button, Card, CardActions, CardContent, Typography } from "@mui/materia
 import '../styles/CardActivity.css'
 import {Items} from '../components/Items'
 import{ v4 }from 'uuid'
+import { Link } from "react-router-dom"
 
 
 export const CardActivity = ({item}) => {
@@ -13,20 +14,16 @@ console.log(item)
   console.log(item.id)
  }
 
-   const DateFormat= (date)=>{
-
-
-      
-   }
+ 
   return (
-    <div className="Container_activity" id={item.id} onClick={onClikCard}>
+    <div className="Container_activity" id={item.id} >
      <Card className="Card_activity" sx={{ maxWidth: 200 }}>
       <CardContent>
         <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-         <span>{item.title}</span> 
+         <span className="items">{item.title}</span> 
         </Typography>
         <hr/>
-        <span className="Add_items">Items</span>
+        <Link className="Add_items" onClick={onClikCard}>Items</Link>
         <Typography variant="h5" component="div">
           {
             item.item_activities?.map((iten)=>(
