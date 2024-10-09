@@ -15,7 +15,7 @@ useEffect(()=>{
   return (
     <div key={v4()}>
         {
-          Items?.map((element, index) => (
+          Items?.map((element) => (
             (element.id === iten.itemId) && <li key={v4()}>{element.description}</li>
           ))
         }

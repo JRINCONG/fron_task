@@ -4,18 +4,20 @@ import '../styles/CardActivity.css'
 import {Items} from '../components/Items'
 import{ v4 }from 'uuid'
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
 
 export const CardActivity = ({item}) => {
-
-console.log(item)
+const [ ModalItems, setModalItems ]= useState(false)
 
  const onClikCard = (e)=>{
   console.log(item.id)
+
  }
 
  
   return (
+  
     <div className="Container_activity" id={item.id} >
      <Card className="Card_activity" sx={{ maxWidth: 200 }}>
       <CardContent>
@@ -48,8 +50,11 @@ console.log(item)
       <CardActions>
         <Button size="small"></Button>
       </CardActions>
-    </Card>
+    </Card>    
     </div>
+   
+
+  
   )
 }
 

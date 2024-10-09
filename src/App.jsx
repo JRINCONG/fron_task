@@ -25,9 +25,11 @@ const App = () => {
        <Route path='/create' element={<CreateUsers/>}/>
 
        <Route element={<Validar/>}>
-       <Route path='/items' element={<AddItems/>}/>
-       <Route path='/Add_Actividad' element={<Addtaks/>}/>
-       <Route path='/actividades' element={<ShowActivity/>}/>       
+      
+       
+       <Route path='/actividades' element={<ShowActivity/>}/>
+       <Route path='/Add_Activities' element={<Addtaks/>}/>
+       <Route path='/items' element={<AddItems/>}/>       
        </Route>
 
        <Route path='/*' element={<Error/>}/>

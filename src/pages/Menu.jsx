@@ -24,24 +24,16 @@ useEffect(()=>{
 
 
   return (
-    <div className='Navbar'>
-         
-   
-        
-        {
+    <div className='Navbar'>     
+           {
           (UserMe)?
         
           <ul className='Container_menu_user'>
-             <li>
-              <NavLink className={ (val)=>`nav_select ${ val.isActive ? 'Active':''}`} to='/actividades'>Activity</NavLink>
-              </li>
+
+            <li><NavLink className={ (val)=>`nav_select ${ val.isActive ? 'Active':''}`} to='/actividades'>Activities</NavLink></li>
         
-            <li><NavLink  className={ (val)=> `nav_select ${ val.isActive ? 'Active':'' }`} to='/Add_Actividad'>Add 
-            activities</NavLink></li>
-            
-            <li>
-              <NavLink className={ (val)=>`nav_select ${ val.isActive ? 'Active':''}`} to='/items'>Add Items</NavLink>
-              </li>
+            <li><NavLink  className={ (val)=> `nav_select ${ val.isActive ? 'Active':'' }`} to='/Add_Activities'>New activities</NavLink></li>           
+            <li><NavLink className={ (val)=>`nav_select ${ val.isActive ? 'Active':''}`} to='/items'>Add Items</NavLink></li>
              
             <li>{UserMe.usuario.firstName}</li>
             <li><span className='btn_logout'>Logout</span></li>
